@@ -141,9 +141,33 @@ ul{
 
 html:has(#img1:hover) {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);;
-    background-image: url("../data/projects/festival.png");
+    background-image: url("../data/projects/festival2.png");
     background-size:cover; 
+    background-position:center center;
 }
+
+html:has(#img4:hover) {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);;
+    background-image: url("../data/projects/collage2.png");
+    background-size:cover; 
+    background-position:center center;
+}
+
+html:has(#img6:hover) {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);;
+    background-image: url("../data/projects/cloe2.png");
+    background-size:cover; 
+    background-position:center center;
+}
+
+html:has(#img7:hover) {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);;
+    background-image: url("../data/projects/ccdm2.png");
+    background-size:cover; 
+    background-position:center center;
+}
+
+
 
 #work:hover, #about:hover, #contacts:hover{
     color:var(--amarelo);
