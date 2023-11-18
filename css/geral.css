@@ -15,6 +15,8 @@
     /*font-family: 'Krona One', sans-serif;*/
     font-family: 'Avenir', sans-serif;
     color: var(--branco);
+
+    --titulos:3rem;
 }
 
 html{
@@ -30,6 +32,68 @@ main{
     max-height:100vh;
     width:100%;
 }
+
+.nome{
+    font-family: 'Krona One', sans-serif;
+    font-size:2.8rem;
+    display:inline-block;
+    position:relative;
+}
+
+/*.tags{
+    display:inline-block;
+}*/
+
+header{
+    /*grid-column:9/13;
+    grid-row:1/2;
+    max-width:100%;*/
+    width:50%;
+    text-align: right;
+    position:absolute;
+    right:2.32%;
+    top:1%;
+} 
+
+nav {
+    position:absolute;
+    left:2.32%;
+    bottom:1%;
+    width:60%;
+}
+
+.navegacao{
+    font-size: 2rem;
+    font-weight:700;
+    margin-right:3%;
+    position:relative;
+}
+
+
+
+ul{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.redes{
+    width:40%;
+    position:relative;
+}
+
+.inline{
+    display:inline-block;
+    margin-right:3%;
+}
+
+#work{
+    color:var(--rosa);
+}
+
+#work:hover, #about:hover, #contacts:hover{
+    color:var(--amarelo);
+}
+
 
 @media screen and  (min-width: 600px){
     .container{
