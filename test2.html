@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        #img3 {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc; /* for visibility */
+        }
+    </style>
+</head>
+<body>
+    <div id="img3"></div>
+
+    <script>
+        let body = document.querySelector("body");
+        let img3 = document.querySelector("#img3");
+
+        let timer = 1000;
+        let imagemAtualIndex = 0;
+        let imagens = ["", "https://via.placeholder.com/800x600", "https://via.placeholder.com/800x600/0000FF", "https://via.placeholder.com/800x600/FF0000"];
+        let maximo = imagens.length - 1;
+        let intervalId;
+
+        img3.addEventListener("mouseover", function () {
+            intervalId = setInterval(proxImg, timer);
+        });
+
+        img3.addEventListener("mouseleave", function () {
+            clearInterval(intervalId);
+            body.style.backgroundImage = "";
+        });
+
+        function proxImg() {
+            body.style.backgroundImage = "url(" + imagens[imagemAtualIndex] + ")";
+            imagemAtualIndex++;
+
+            if (imagemAtualIndex > maximo) {
+                imagemAtualIndex = 0;
+            }
+        }
+    </script>
+</body>
+</html>
