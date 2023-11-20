@@ -41,7 +41,9 @@
 }
 
 
-
+#work{
+    color:var(--rosa);
+}
 
 
 /*.inline path:hover{
@@ -127,6 +129,7 @@ html:has(#img7:hover) {
 
 .nome_proj{
     font-size:var(--titulos);
+    font-family: 'Krona One', sans-serif;
     font-weight:700;
     color:var(--amarelo);
     position:absolute;
@@ -134,5 +137,5 @@ html:has(#img7:hover) {
     right:2.32%;
     max-width:30%;
     text-align:right;
-    line-height:3rem;
+    line-height:3.5rem;
 }

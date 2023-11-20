@@ -86,10 +86,6 @@ ul{
     margin-right:3%;
 }
 
-#work{
-    color:var(--rosa);
-}
-
 #work:hover, #about:hover, #contacts:hover{
     color:var(--amarelo);
 }
