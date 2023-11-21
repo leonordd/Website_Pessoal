@@ -89,7 +89,7 @@ setTimeout(checkHoverState, 1000); // Check after 1 seconds*/
     html.classList.remove("show");
 }*/
 let allImg = document.querySelectorAll(".container >img");
-let nome = document.querySelector(".nome");
+let nome = document.querySelector("h1");
 let redes = document.querySelector(".redes");
 let navegacao = document.querySelector(".navegacao");
 

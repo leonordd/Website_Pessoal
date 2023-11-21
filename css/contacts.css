@@ -1,0 +1,8 @@
+#contacts{
+    color:var(--rosa);
+}
+
+h4{
+    grid-column:3/10;
+    width:100%;
+}
