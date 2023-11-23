@@ -89,9 +89,8 @@ setTimeout(checkHoverState, 1000); // Check after 1 seconds*/
     html.classList.remove("show");
 }*/
 let allImg = document.querySelectorAll(".container >img");
-let nome = document.querySelector("h1");
-let redes = document.querySelector(".redes");
-let navegacao = document.querySelector(".navegacao");
+let nome = document.querySelector("header");
+let navegacao = document.querySelector("nav");
 
 let nome_proj = document.createElement("div");
 nome_proj.classList.add("nome_proj");
@@ -105,7 +104,6 @@ img3.addEventListener("mouseover", function(){
     box.style.zIndex="8";
     img3.style.zIndex="80";
     nome.style.zIndex="80";
-    redes.style.zIndex="80";
     navegacao.style.zIndex="80";
 
     box.appendChild(nome_proj);
@@ -116,10 +114,6 @@ img3.addEventListener("mouseleave", function(){
     box.classList.remove("show");
     clearInterval(intervalId);
     box.style.zIndex="-10";
-    img3.style.zIndex="0";
-    nome.style.zIndex="0";
-    redes.style.zIndex="0";
-    navegacao.style.zIndex="0";
 
     box.removeChild(nome_proj);
 });
