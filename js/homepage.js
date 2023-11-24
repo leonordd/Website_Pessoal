@@ -1,138 +1,102 @@
-let box = document.querySelector(".box");
-let img3 = document.querySelector("#img3");
+/*let imgArrays = {
+    'img1': ["../data/projects/festival2.png"],
+    'img2': ["../data/projects/apropriation2.png"],
+    'img3' : ["./data/projects/shift3.png", "./data/projects/shift5.png", "./data/projects/shift6.png", "./data/projects/shift2.png"],
+    'img4': ["../data/projects/collage2.png"],
+    'img5': ["../data/projects/leave2.png"],
+    'img6': ["../data/projects/cloe2.png"],
+    'img7': ["../data/projects/ccdm2.png"],
+};*/
 
-//carrossel de imagens
-let timer = 1000;
-let imagemAtualIndex = 0;
-let imagens = [ "", "./data/projects/shift3.png", "./data/projects/shift5.png", "./data/projects/shift6.png", "./data/projects/shift2.png",];
-let maximo = imagens.length-1;
-let intervalId;
+let imgArrays = {
+  'img1': {
+    images: ["../data/projects/festival2.png", "../data/projects/justica.png"],
+    name: 'Typographic Composition'
+  },
+  'img2': {
+    images: ["../data/projects/apropriation2.png", "../data/projects/apropriation3.png", "../data/projects/apropriation4.png", "../data/projects/apropriation5.png", "../data/projects/apropriation6.png", "../data/projects/apropriation7.png" ],
+    name: 'Lewis Baltz Apropriation'
+  },
+  'img3': {
+    images: ["./data/projects/shift3.png","./data/projects/shift5.png", "./data/projects/shift7.png", "./data/projects/shift6.png", "./data/projects/shift2.png"],
+    name: 'Shift APPens 2023'
+  },
+  'img4': {
+    images: ["../data/projects/collage2.png"],
+    name: 'Colagge'
+  },
+  'img5': {
+    images: ["../data/projects/leave2.png"],
+    name: 'Corpo Cérebro Desenho'
+  },
 
+  'img6': {
+    images: ["../data/projects/cloe2.png", "../data/projects/cloe4.png", "../data/projects/cloe3.png"],
+    name: 'Cloé, Invisible City'
+  },
+  'img7': {
+    images: ["../data/projects/ccdm2.png", "../data/projects/ccdm3.png", "../data/projects/ccdm4.png", "../data/projects/ccdm5.png", "../data/projects/ccdm6.png"],
+    name: 'Ciclo de Conversas, Design + Multimédia'
+  },
+};
 
-/*let element = document.getElementById("img3");
-if (element.parentNode.matches(":hover")) {
-    console.log("yes");
-} else {
-    console.log("no");
-}*/
+  let time = 1000;
 
+  let intervalId;
+  let box_change = document.querySelector('.box');
+  let h1 = document.querySelector("h1");
+  let navegacao = document.querySelector("nav");
 
+  let nome_proj = document.createElement("div");
+  nome_proj.classList.add("nome_proj");
+  nome_proj.innerText = "SHIFT APPENS 2023"; 
+  
+  let img;
 
+  function startCarousel(imgKey) {
+    let index = 0;
+    let imgArray = imgArrays[imgKey];
+    console.log(imgKey);
 
+    img = document.querySelector('#' + imgKey);
 
-/*let commonParent = document.querySelector(".container");
-
-commonParent.addEventListener("mouseover", function (event) {
-  let target = event.target;
-
-  if (target.matches("#img3") || target.matches("#otherElementId")) {
-    console.log("yes");
-    //html.style.backgroundImage = "url('./data/projects/shift.png')";
-    html.classList.add("show");
-    //allImg.style.zIndex = "-10";
-    setInterval(function(){
-        imagemAtualIndex=imagemAtualIndex+1;
-    }, timer);
-    console.log(imagemAtualIndex);
-    //proxImg();
-  } else {
-    console.log("no");
-    html.style.backgroundImage = "";
-    html.classList.remove("show");
-    imagemAtualIndex=0;
-  }
-});*/
-
-
-
-
-/*let element = document.getElementById("img3");
-let isHovered = false;
-
-img3.addEventListener("mouseover", function() {
-    isHovered = true;
-    //console.log("yes");
-});
-
-img3.addEventListener("mouseout", function() {
-    isHovered = false;
-    //console.log("no");
-});
-
-
-function checkHoverState() {
-    if (isHovered) {
-        console.log("Element is currently being hovered.");
-    } else {
-        console.log("Element is not being hovered.");
+    function changeImage() {
+      box_change.style.backgroundImage = `url('${imgArray.images[index]}')`;
+      h1.innerText=imgArray.name;
+      index = (index + 1) % imgArray.images.length;
     }
-}
 
-// Example: Check hover state after a delay
-setTimeout(checkHoverState, 1000); // Check after 1 seconds*/
+    // Initial call
+    changeImage();
+
+    // Start carousel
+    intervalId = setInterval(changeImage, time);
+    box_change.classList.add("show");
+    //box_change.appendChild(nome_proj);
 
 
-
-
-
-
-// Check the hover state at any point
-/*if (isHovered===true) {
-    console.log("true");
-    html.style.backgroundImage = "url('./data/projects/shift.png')";
-    html.classList.add("show");
-    //allImg.style.zIndex = "-10";
-    //proxImg();
-} else {
-    console.log("true");
-   // html.style.backgroundImage = "";
-    html.classList.remove("show");
-}*/
-let allImg = document.querySelectorAll(".container >img");
-let nome = document.querySelector("header");
-let navegacao = document.querySelector("nav");
-
-let nome_proj = document.createElement("div");
-nome_proj.classList.add("nome_proj");
-nome_proj.innerText = "SHIFT APPENS 2023";
-
-img3.addEventListener("mouseover", function(){
-    //body.style.backgroundImage = "url('./data/projects/shift.png')";
-    box.classList.add("show");
-    intervalId = setInterval(proxImg(), timer);
-
-    box.style.zIndex="8";
-    img3.style.zIndex="80";
-    nome.style.zIndex="80";
+    box_change.style.zIndex="8";
+    img.style.zIndex="80";
+    //nome.style.zIndex="80";
     navegacao.style.zIndex="80";
 
-    box.appendChild(nome_proj);
-});
+    //h1.innerText="SHIFT APPENS 2023";
+    h1.style.color="#FFFF00";
+    /*img.style.zIndex="30";*/
+  }
 
-img3.addEventListener("mouseleave", function(){
-    box.style.backgroundImage = "";
-    box.classList.remove("show");
+  function stopCarousel() {
     clearInterval(intervalId);
-    box.style.zIndex="-10";
+    document.querySelector('.box').style.backgroundImage = 'none';
 
-    box.removeChild(nome_proj);
-});
+    box_change.classList.remove("show");
+    //box_change.removeChild(nome_proj);
 
-//slide das imagens atraves de um intervalo de tempo
-function proxImg() {
-    //imagens[imagemAtualIndex].classList.remove("show");
-    imagemAtualIndex++;
-    box.style.backgroundImage = "url("+ imagens[imagemAtualIndex] +")";
-    //console.log(imagemAtualIndex);
-   // console.log(imagens[imagemAtualIndex]);
-
-    //quando a class list termina/está no seu máximo, reinicia o ciclo das imagens
-    if (imagemAtualIndex >= maximo) {
-        imagemAtualIndex = 0; //voltar ao inicio
-    }
-}
-
-
+    box_change.style.zIndex="-10";
+    img.style.zIndex="0";
+    h1.innerText = "LEONOR DINIZ"; 
+    h1.style.color="#FFFFFF";
+  }
 
 
 

@@ -19,6 +19,10 @@
     --titulos:3rem;
 }
 
+body{
+    overflow: hidden;
+}
+
 html{
     background-color: var(--preto);
 }
@@ -104,4 +108,49 @@ ul{
         height:90vh;
         width:calc(100%-(2*2.32%));
     } 
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        display:grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-column-gap: 1.65%;
+    
+        grid-template-rows: repeat(12,1fr);
+        grid-row-gap: 1%;
+    
+        margin:8% 2.32%;
+        height:90vh;
+        width:calc(100%-(2*2.32%));
+    }
+
+    nav {
+        /*position:fixed;
+        left:2.32%;
+        bottom:3%;
+        width:60%;*/
+        left:4%;
+        z-index:100;
+    }
+
+    .navegacao{
+        font-size:1.7rem;
+    }
+
+    .redes{
+        display:none;
+    }
+
+    header{
+        position:fixed;
+        right:0%;
+        top:0%;
+        text-align: center;
+        width:100%;
+        padding:4% 0%;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
 }
