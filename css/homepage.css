@@ -1,0 +1,127 @@
+@media screen and  (min-width: 600px){ 
+    .imgs{
+        width:100%;
+        height:auto;
+    }
+    
+    #img1{
+        grid-column: 2/4;
+        grid-row:1/3;
+    }
+    
+    #img2{
+        grid-column: 6/8;
+        grid-row:2/4;
+    }
+    
+    #img3{
+        grid-column: 1/3;
+        grid-row:4/6;
+    }
+    
+    #img4{
+        grid-column:4/6;
+        grid-row:5/7;
+    }
+    
+    #img5{
+        grid-column:8/10;
+        grid-row:7/9;
+    }
+    
+    #img6{
+        grid-column:11/13;
+        grid-row:6/8;
+    }
+    
+    #img7{
+        grid-column:9/11;
+        grid-row:3/5;
+    }   
+
+    .box{
+        margin:0;
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        background-size:cover; 
+        background-position:center center;
+        transition: background-image 0.3s ease-in-out;
+        z-index:-10;
+    }
+
+    .show{
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);
+    }
+}
+
+@media screen and (max-width: 600px){ 
+    .imgs{
+        width:100%;
+        height:auto;
+    }
+    
+    #img1{ /*FESTIVAL*/
+        grid-column: 2/4;
+        grid-row:2/4;
+    }
+    
+    #img2{ /*FOTOGRAFIA*/
+        grid-column: 7/9;
+        grid-row:3/5;
+    }
+    
+    #img3{ /*SA*/
+        grid-column: 1/3;
+        grid-row:6/8;
+    }
+    
+    #img4{ /*COLLAGE*/
+        grid-column:6/8;
+        grid-row:7/9;
+    }
+    
+    #img5{ /*FOLHA*/
+        grid-column:6/8;
+        grid-row:11/13;
+    }
+    
+    #img6{ /*CLOE*/
+        grid-column:3/5;
+        grid-row:8/10;
+    }
+    
+    #img7{ /*CCDM*/
+        grid-column:4/6;
+        grid-row:4/6;
+    }   
+
+    .box{
+        margin:0;
+        width:100vw;
+        position:fixed;
+        top:0;
+        left:0;
+        transition: background-image 0.3s ease-in-out;
+        z-index:-10;
+    }
+
+    .show{
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.50);
+        background-size:130% auto; 
+        background-repeat: no-repeat;
+        background-position:center center;
+        background-color:var(--preto);
+        height:101vh;
+    }
+}
+
+#work{
+    color:var(--rosa);
+}
+
+.img-wrapper {
+    display: inline-block;
+}

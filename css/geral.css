@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+    /*COLORS*/
+    --preto: #141414;
+    --branco: #FFFFFF;
+    --rosa: #FA00FF;
+    --amarelo: #FFFF00;
+    --cyan: #00D1FF;
+
+    /*text*/
+    text-decoration:none;
+    font-family: 'Avenir', sans-serif;
+    --titulos:3rem;
+    color: var(--branco);
+}
+
+body{
+    overflow: hidden;
+}
+
+html{
+    background-color: var(--preto);
+}
+
+div{
+    display:inline-block;
+}
+
+main{
+    position:relative; 
+    max-height:100vh;
+    width:100%;
+}
+
+h1{
+    font-family: 'Krona One', sans-serif;
+    font-size:2.8rem;
+    display:inline-block;
+    position:relative;
+}
+
+header{
+    width:50%;
+    text-align: right;
+    position:fixed;
+    right:2.32%;
+    top:3%;
+    z-index:100;
+} 
+
+nav {
+    position:fixed;
+    left:2.32%;
+    bottom:3%;
+    width:60%;
+    z-index:100;
+}
+
+.navegacao{
+    font-size: 2rem;
+    font-weight:700;
+    margin-right:3%;
+    position:relative;
+}
+
+ul{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.redes{
+    width:30%;
+    position:relative;
+}
+
+.redes li{
+    padding:3% 3% 0% 3%;
+}
+
+.redes svg{
+    transform: scale(1.8);
+}
+
+.redes svg:hover{
+    fill:var(--amarelo);
+}
+
+
+.inline{
+    display:inline-block;
+    margin-right:3%;
+}
+
+#work:hover, #about:hover, #contacts:hover{
+    color:var(--amarelo);
+}
+
+
+@media screen and  (min-width: 600px){
+    .container{
+        display:grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 1.65%;
+    
+        grid-template-rows: repeat(8,1fr);
+        /*grid-row-gap: 3%;*/
+    
+        margin:2.32%;
+        height:90vh;
+        width:calc(100%-(2*2.32%));
+    } 
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        display:grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-column-gap: 1.65%;
+    
+        grid-template-rows: repeat(12,1fr);
+        grid-row-gap: 1%;
+    
+        margin:8% 2.32%;
+        height:90vh;
+        width:calc(100%-(2*2.32%));
+    }
+
+    nav {
+        left:4%;
+        z-index:100;
+    }
+
+    .navegacao{
+        font-size:1.7rem;
+    }
+
+    .redes{
+        display:none;
+    }
+
+    header{
+        position:fixed;
+        right:0%;
+        top:0%;
+        text-align: center;
+        width:100%;
+        padding:4% 0%;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+}
