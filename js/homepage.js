@@ -13,7 +13,7 @@ let imgArrays = {
   },
   'img4': {
     images: ["./data/projects/apropriation2.png", "./data/projects/apropriation3.png", "./data/projects/apropriation4.png", "./data/projects/apropriation5.png", "./data/projects/apropriation6.png", "./data/projects/apropriation7.png" ],
-    name: 'Lewis Baltz Apropriation'
+    name: 'Lewis Baltz, Apropriation'
   },
 
   'img5': {
