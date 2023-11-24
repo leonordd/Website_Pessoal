@@ -42,3 +42,8 @@ for (let i = 0; i < tags.length; i++) {
   })
 }
 
+
+tags[i].addEventListener("touchstart", function(){
+  tags[i].classList.add("hovered");
+})
+
