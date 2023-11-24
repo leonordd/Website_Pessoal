@@ -31,7 +31,7 @@ let imgArrays = {
   },
 };
 
-  let time = 800;
+  let time = 1000;
 
   let intervalId;
   let box_change = document.querySelector('.box');
@@ -47,8 +47,6 @@ let imgArrays = {
   function startCarousel(imgKey) {
     let imgArray = imgArrays[imgKey];
     let index = 0;
-
-    img = document.querySelector('#' + imgKey);
     function changeImage() {
       box_change.style.backgroundImage = `url('${imgArray.images[index]}')`;
       h1.innerText=imgArray.name;
@@ -56,9 +54,10 @@ let imgArrays = {
     }
 
     changeImage();
+     // Start carousel
+     intervalId = setInterval(changeImage, time);
 
-    // Start carousel
-    intervalId = setInterval(changeImage, time);
+    img = document.querySelector('#' + imgKey);
     box_change.classList.add("show");
 
     box_change.style.zIndex="8";
@@ -72,7 +71,6 @@ let imgArrays = {
     document.querySelector('.box').style.backgroundImage = 'none';
 
     box_change.classList.remove("show");
-
     box_change.style.zIndex="-10";
     img.style.zIndex="0";
     h1.innerText = "LEONOR DINIZ"; 
