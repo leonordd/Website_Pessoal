@@ -1,10 +1,10 @@
 let imgArrays = {
   'img1': {
-    images: ["../data/projects/festival2.png", "../data/projects/justica.png"],
+    images: ["./data/projects/festival2.png", "./data/projects/justica.png"],
     name: 'Typographic Composition'
   },
   'img2': {
-    images: ["../data/projects/collage2.png"],
+    images: ["./data/projects/collage2.png"],
     name: 'Colagge'
   },
   'img3': {
@@ -12,21 +12,21 @@ let imgArrays = {
     name: 'Shift APPens 2023'
   },
   'img4': {
-    images: ["../data/projects/apropriation2.png", "../data/projects/apropriation3.png", "../data/projects/apropriation4.png", "../data/projects/apropriation5.png", "../data/projects/apropriation6.png", "../data/projects/apropriation7.png" ],
+    images: ["./data/projects/apropriation2.png", "./data/projects/apropriation3.png", "./data/projects/apropriation4.png", "./data/projects/apropriation5.png", "./data/projects/apropriation6.png", "./data/projects/apropriation7.png" ],
     name: 'Lewis Baltz Apropriation'
   },
 
   'img5': {
-    images: ["../data/projects/gtreze2.png", "../data/projects/gtreze3.png", "../data/projects/gtreze4.png", "../data/projects/gtreze5.png", "../data/projects/gtreze6.png"],
+    images: ["./data/projects/gtreze2.png", "./data/projects/gtreze3.png", "./data/projects/gtreze4.png", "./data/projects/gtreze5.png", "./data/projects/gtreze6.png"],
     name: 'GTreze Website'
   },
 
   'img6': {
-    images: ["../data/projects/cloe2.png", "../data/projects/cloe4.png", "../data/projects/cloe3.png"],
+    images: ["./data/projects/cloe2.png", "./data/projects/cloe4.png", "./data/projects/cloe3.png"],
     name: 'Cloé, Invisible City'
   },
   'img7': {
-    images: ["../data/projects/ccdm2.png", "../data/projects/ccdm3.png", "../data/projects/ccdm4.png", "../data/projects/ccdm5.png", "../data/projects/ccdm6.png"],
+    images: ["./data/projects/ccdm2.png", "./data/projects/ccdm3.png", "./data/projects/ccdm4.png", "./data/projects/ccdm5.png", "./data/projects/ccdm6.png"],
     name: 'Ciclo de Conversas, Design + Multimédia'
   },
 };
@@ -37,10 +37,6 @@ let imgArrays = {
   let box_change = document.querySelector('.box');
   let h1 = document.querySelector("h1");
   let navegacao = document.querySelector("nav");
-
-  let nome_proj = document.createElement("div");
-  nome_proj.classList.add("nome_proj");
-  nome_proj.innerText = "SHIFT APPENS 2023"; 
   
   let img;
 
