@@ -25,6 +25,13 @@ function draw() {
 }
 
 
+function resetTags() {
+  background('#141414');
+  tags.forEach(tag => {
+    tag.classList.remove("hovered");
+  });
+}
+
 function mousePressed() {
   if (
     mouseX >= 0 &&
@@ -32,22 +39,19 @@ function mousePressed() {
     mouseY > 0 &&
     mouseY < window.innerHeight
   ) {
-    background('#141414');
-    for (let i = 0; i < tags.length; i++) {
-      tags[i].classList.remove("hovered");
-    }
+    resetTags();
   }
 }
 
-// Add mouseover event listeners
-for (let i = 0; i < tags.length; i++) {
-  tags[i].addEventListener("mouseover", function () {
-    tags[i].classList.add("hovered");
+// Add mouseover and touchstart event listeners
+tags.forEach(tag => {
+  tag.addEventListener("mouseover", function () {
+    tag.classList.add("hovered");
   });
 
-  // Add touchstart event listeners
-  tags[i].addEventListener("touchstart", function (event) {
-    event.preventDefault(); // Prevent default touch behavior
-    tags[i].classList.add("hovered");
+  tag.addEventListener("touchstart", function (event) {
+    event.preventDefault();
+    resetTags();
+    tag.classList.add("hovered");
   });
-}
+});
