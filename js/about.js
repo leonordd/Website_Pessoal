@@ -35,16 +35,16 @@ function mousePressed(){
 }
 
 
-//js
 for (let i = 0; i < tags.length; i++) {
-  tags[i].addEventListener("mouseover", function(){
-      tags[i].classList.add("hovered");
-  })
-}
+  tags[i].addEventListener("mouseover", (function(index) {
+    return function() {
+      tags[index].classList.add("hovered");
+    };
+  })(i));
 
-for (let i = 0; i < tags.length; i++) {
-tags[i].addEventListener("touchstart", function(){
-  tags[i].classList.add("hovered");
-})
+  tags[i].addEventListener("touchstart", (function(index) {
+    return function() {
+      tags[index].classList.add("hovered");
+    };
+  })(i));
 }
-
