@@ -14,20 +14,21 @@ let imgArrays = {
     name: 'Typographic Composition'
   },
   'img2': {
-    images: ["../data/projects/apropriation2.png", "../data/projects/apropriation3.png", "../data/projects/apropriation4.png", "../data/projects/apropriation5.png", "../data/projects/apropriation6.png", "../data/projects/apropriation7.png" ],
-    name: 'Lewis Baltz Apropriation'
+    images: ["../data/projects/collage2.png"],
+    name: 'Colagge'
   },
   'img3': {
     images: ["./data/projects/shift3.png","./data/projects/shift5.png", "./data/projects/shift7.png", "./data/projects/shift6.png", "./data/projects/shift2.png"],
     name: 'Shift APPens 2023'
   },
   'img4': {
-    images: ["../data/projects/collage2.png"],
-    name: 'Colagge'
+    images: ["../data/projects/apropriation2.png", "../data/projects/apropriation3.png", "../data/projects/apropriation4.png", "../data/projects/apropriation5.png", "../data/projects/apropriation6.png", "../data/projects/apropriation7.png" ],
+    name: 'Lewis Baltz Apropriation'
   },
+
   'img5': {
-    images: ["../data/projects/leave2.png"],
-    name: 'Corpo Cérebro Desenho'
+    images: ["../data/projects/gtreze2.png", "../data/projects/gtreze3.png", "../data/projects/gtreze4.png", "../data/projects/gtreze5.png", "../data/projects/gtreze6.png"],
+    name: 'GTreze Website'
   },
 
   'img6': {
@@ -40,7 +41,7 @@ let imgArrays = {
   },
 };
 
-  let time = 1000;
+  let time = 800;
 
   let intervalId;
   let box_change = document.querySelector('.box');
@@ -54,19 +55,16 @@ let imgArrays = {
   let img;
 
   function startCarousel(imgKey) {
-    let index = 0;
     let imgArray = imgArrays[imgKey];
-    console.log(imgKey);
+    let index = 0;
 
     img = document.querySelector('#' + imgKey);
-
     function changeImage() {
       box_change.style.backgroundImage = `url('${imgArray.images[index]}')`;
       h1.innerText=imgArray.name;
       index = (index + 1) % imgArray.images.length;
     }
 
-    // Initial call
     changeImage();
 
     // Start carousel

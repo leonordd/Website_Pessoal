@@ -81,9 +81,22 @@ ul{
 }
 
 .redes{
-    width:40%;
+    width:30%;
     position:relative;
 }
+
+.redes li{
+    padding:3% 3% 0% 3%;
+}
+
+.redes svg{
+    transform: scale(1.8);
+}
+
+.redes svg:hover{
+    fill:var(--amarelo);
+}
+
 
 .inline{
     display:inline-block;
