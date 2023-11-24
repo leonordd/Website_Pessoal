@@ -72,7 +72,3 @@ let imgArrays = {
     h1.innerText = "LEONOR DINIZ"; 
     h1.style.color="#FFFFFF";
   }
-
-
-
-
