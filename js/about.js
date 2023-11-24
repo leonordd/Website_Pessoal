@@ -25,30 +25,29 @@ function draw() {
 }
 
 
-function mousePressed(){
-  if((mouseX >=0) && (mouseX <window.innerWidth) && (mouseY >0) && (mouseY<window.innerHeight)){
+function mousePressed() {
+  if (
+    mouseX >= 0 &&
+    mouseX < window.innerWidth &&
+    mouseY > 0 &&
+    mouseY < window.innerHeight
+  ) {
     background('#141414');
     for (let i = 0; i < tags.length; i++) {
-        tags[i].classList.remove("hovered");
+      tags[i].classList.remove("hovered");
     }
   }
 }
 
-
-function handlePointerEvent() {
-  this.classList.add("hovered");
-}
-
+// Add mouseover event listeners
 for (let i = 0; i < tags.length; i++) {
-  tags[i].addEventListener("pointerover", handlePointerEvent);
-}
+  tags[i].addEventListener("mouseover", function () {
+    tags[i].classList.add("hovered");
+  });
 
-
-function handleTouchStart(event) {
-  event.preventDefault();
-  this.classList.add("hovered");
-}
-
-for (let i = 0; i < tags.length; i++) {
-  tags[i].addEventListener("touchstart", handleTouchStart);
+  // Add touchstart event listeners
+  tags[i].addEventListener("touchstart", function (event) {
+    event.preventDefault(); // Prevent default touch behavior
+    tags[i].classList.add("hovered");
+  });
 }
