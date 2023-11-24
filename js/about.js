@@ -42,3 +42,13 @@ function handlePointerEvent() {
 for (let i = 0; i < tags.length; i++) {
   tags[i].addEventListener("pointerover", handlePointerEvent);
 }
+
+
+function handleTouchStart(event) {
+  event.preventDefault();
+  this.classList.add("hovered");
+}
+
+for (let i = 0; i < tags.length; i++) {
+  tags[i].addEventListener("touchstart", handleTouchStart);
+}
