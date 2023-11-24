@@ -1,5 +1,4 @@
 let tags = document.querySelectorAll(".tags");
-
 let d=5;
 let x,y,w,h;
 let c=0;
@@ -21,13 +20,6 @@ function draw() {
     stroke('#00D1FF');
     strokeWeight(d);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    //if((mouseX>x) && (mouseX<x+w) && (mouseY>y) && (mouseY<=y+h) ){
-        //c=255;
-    //}
-
-    //fill(c);
-    //noStroke();
-    //rect(x,y,w,h);
 }
 
 function mousePressed(){

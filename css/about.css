@@ -9,6 +9,21 @@ canvas{
     z-index:-10;
 }
 
+.tags{
+    display:inline;
+    width:min-content;
+    height:min-content;
+    color:transparent;
+    align-self: end;
+    border-radius:100px;
+}
+
+.hovered{
+    background-color:var(--branco);
+    color:var(--preto);
+}
+
+
 @media screen and  (min-width: 600px){
     .container{
         grid-row-gap: 3%;
@@ -70,6 +85,11 @@ canvas{
         height:auto;
     }
 
+    .tags{
+        font-size:1.125rem;
+        font-weight:500;
+        padding:18px 28px;
+    }
    
 }
 
@@ -140,25 +160,10 @@ canvas{
         opacity:90%;
     }
     
+    .tags{
+        font-size:1rem;
+        font-weight:500;
+        padding:12px 20px;   
+    }
 }
-
-.tags{
-    display:inline;
-    width:min-content;
-    height:min-content;
-    color:transparent;
-    padding:10px 20px;
-    border-radius:100px;
-    font-size:1rem;
-    font-weight:500;
-    /*grid-column-start:2;*/
-    align-self: end;
-}
-
-
-.hovered{
-    background-color:var(--branco);
-    color:var(--preto);
-}
-
 
