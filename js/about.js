@@ -24,34 +24,40 @@ function draw() {
     line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
-
-function resetTags() {
-  background('#141414');
-  tags.forEach(tag => {
-    tag.classList.remove("hovered");
-  });
-}
-
 function mousePressed() {
-  if (
-    mouseX >= 0 &&
-    mouseX < window.innerWidth &&
-    mouseY > 0 &&
-    mouseY < window.innerHeight
-  ) {
-    resetTags();
+  checkHover();
+
+  if((mouseX >=0) && (mouseX <window.innerWidth) && (mouseY >0) && (mouseY<window.innerHeight)){
+    background('#141414');
+    for (let i = 0; i < tags.length; i++) {
+        tags[i].classList.remove("hovered");
+    }
   }
 }
 
-// Add mouseover and touchstart event listeners
-tags.forEach(tag => {
-  tag.addEventListener("mouseover", function () {
-    tag.classList.add("hovered");
-  });
+function touchMoved() {
+  checkHover();
+  return false;
+}
 
-  tag.addEventListener("touchstart", function (event) {
-    event.preventDefault();
-    resetTags();
-    tag.classList.add("hovered");
+function checkHover() {
+  for (let i = 0; i < tags.length; i++) {
+    const tagRect = tags[i].getBoundingClientRect();
+
+    // Vê se as coordenadas de toque estão dentro da caixa delimitada por uma tag
+    if (
+      mouseX >= tagRect.left &&
+      mouseX <= tagRect.right &&
+      mouseY >= tagRect.top &&
+      mouseY <= tagRect.bottom
+    ) {
+      tags[i].classList.add("hovered");
+    }
+  }
+}
+
+for (let i = 0; i < tags.length; i++) {
+  tags[i].addEventListener("mouseover", function () {
+    tags[i].classList.add("hovered");
   });
-});
+}
