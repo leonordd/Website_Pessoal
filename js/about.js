@@ -1,3 +1,5 @@
+//p5.js
+
 let tags = document.querySelectorAll(".tags");
 let d=5;
 let x,y,w,h;
@@ -22,6 +24,7 @@ function draw() {
     line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
+
 function mousePressed(){
   if((mouseX >=0) && (mouseX <window.innerWidth) && (mouseY >0) && (mouseY<window.innerHeight)){
     background('#141414');
@@ -31,8 +34,11 @@ function mousePressed(){
   }
 }
 
-    for (let i = 0; i < tags.length; i++) {
-    tags[i].addEventListener("mouseover", function(){
-        tags[i].classList.add("hovered");
-    })
+
+//js
+for (let i = 0; i < tags.length; i++) {
+  tags[i].addEventListener("mouseover", function(){
+      tags[i].classList.add("hovered");
+  })
 }
+
